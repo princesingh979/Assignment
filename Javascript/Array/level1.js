@@ -16,4 +16,7 @@ const arr = [3,5,2]
 
 ///Q3 join the array and console log
 // expected output 352
-console.log(arr.join(""))
+// console.log(arr.join(""))
+
+
+
