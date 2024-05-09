@@ -14,8 +14,6 @@ import * as Yup from 'yup';
      .min(2, 'Too Short!')
      .max(50, 'Too Long!')
      .required('Required'),
-     birthdate: Yup.string()
-     .required('Required'),
    email: Yup.string().email('Invalid email').required('Required'),
  });
 
