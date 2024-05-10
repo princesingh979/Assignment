@@ -1,15 +1,12 @@
 
 import React from 'react'
-import {Button} from "@nextui-org/react";
+import {Button, Navbar} from "@nextui-org/react";
 import Link from 'next/link';
+import NavBar from '@/component/NavBar/NavBar';
 const page = () => {
   return (
-    <div>
-    <h1>Homepage</h1>
-   <div>
-  <Button color='primary'><Link href='login'>Login</Link></Button>
-   </div>
-    </div>
+    <NavBar/>
+    
     
   )
 }

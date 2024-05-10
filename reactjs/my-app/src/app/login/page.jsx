@@ -4,10 +4,14 @@ import React from 'react'
 import { useFormik } from 'formik';
 import Link from "next/link";
 import * as Yup from 'yup';
+import NavBar from "@/component/NavBar/NavBar";
+import EyeSlashFilledIcon from "./EyeSlashFilledIcon";
+import EyeFilledIcon from "./EyeFilledIcon";
+
 
 const SignupSchema = Yup.object().shape({
   password: Yup.string()
-    .min(2, 'Too Short!')
+    .min(8, 'Must be 8 char!')
     .max(50, 'Too Long!')
     .required('Required'),
     Email: Yup.string()
@@ -27,11 +31,17 @@ const formik = useFormik({
   onSubmit: values => {
     alert(JSON.stringify(values, null,2));
   },
+  
 }); 
+const [isVisible, setIsVisible] = React.useState(false);
+
+const toggleVisibility = () => setIsVisible(!isVisible);
   return (
+    
     <form onSubmit={formik.handleSubmit}>
-      <center>
-    <div className="object-center min-h-screen flex items-center flex justify-right bg-blue-200 py-12 px-4 sm:px-6 lg:px-8 text box-border">
+      <NavBar/>
+      
+    <div className="object-center min-h-screen flex items-center flex justify-right bg-blue-200 py-12 px-4 sm:px-6 lg:px-8 text box-border flex justify-end">
     <div className="border border-blue-300 w-96 h-95 bg-indigo-300  ">
      <div className='text-center text-5xl p-4 font-serif '>
     <div className="text-blue-900"> <h1>Facebook</h1> </div></div>
@@ -50,12 +60,24 @@ const formik = useFormik({
       </div>
    <div className="  p-2 m-2 ">
    <Input
-    isRequired
- name='password'
- type="password"
- label="Enter your password"
- defaultValue=""
- className="max-w-xs"
+   isRequired
+   name="password"
+    label=" Enter your Password"
+  
+    defaultValue=""
+   
+   
+    endContent={
+      <button className="" type="button" onClick={toggleVisibility}>
+        {isVisible ? (
+          <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+        ) : (
+          <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+        )}
+      </button>
+    }
+    type={isVisible ? "text" : "password"}
+    className="max-w-xs"
       onChange={formik.handleChange}
       value={formik.values.password}
       />
@@ -71,7 +93,6 @@ const formik = useFormik({
 
  </div>
  </div>
- </center>
  </form>
   )
 }

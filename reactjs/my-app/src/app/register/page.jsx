@@ -38,7 +38,7 @@ validationSchema : SignupSchema,
     <div className="min-h-screen  bg-gray-500 py-12 px-4 sm:px-6 lg:px-8 text box-border bg-gray-500 ">
     <div className="border border-purple-300 w-96 h-95 bg-indigo-300  ">
     <div className='bg-white'>
-     <div className=' text-4xl p-0 font-serif text-black  '>sign up</div>
+     <div className=' text-4xl p-0 font-serif text-black  '>Sign up</div>
      <div className="text-1xl p-0  font-serif">It's quick and easy.</div></div>
     <div className="  p-2 m-2">
    <Input

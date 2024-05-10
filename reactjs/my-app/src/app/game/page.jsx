@@ -15,8 +15,8 @@ const Page = () => {
     myIntervalRef.current = setInterval(() => {
       if(!ispaused){
       const randomNum = Math.ceil(Math.random() * lotteryItems.length);
-      setLotteryId(randomNum);
-   } }, 50);
+      setLotteryId(randomNum -1);
+   } },  lotteryItems.length, 50);
   
     return () => clearInterval(myIntervalRef.current);
   }, [ispaused]) ;
@@ -35,15 +35,15 @@ const Page = () => {
   };
 
   return (
-    <div className="flex flex-col items-center">
-       <h1 className="text-center text-2xl text-emerald-950 mt-3 bg-gray-500 p-3">Lottery Game</h1>
+    <div className="flex flex-col items-center bg-">
+       <h1 className="text-center text-2xl text-emerald-950 mt-3 bg-blue-500 p-3">Lottery Game</h1>
        
       <div className="items-center mt-2">
         <input onChange={(e)=>setChoose(e.target.value)} value={choose} className="p-4"  type="text" placeholder="Choose any one item" />
          <h1 className="mt-2">your selected item : {choose}</h1>
           <h1 className="mt-2">Computer selected:{computerSelected}</h1>
         </div> 
-        <div className=" text-red-600 p-2 mt-2">{choose && computerSelected &&(choose===computerSelected ? "Congratulation you win !!" :"Sorry you loose !!")}</div>
+        <div className=" text-green-600 p-2 mt-2">{choose && computerSelected &&(choose===computerSelected ? "Congratulation you win !!" :"Sorry you loose !!")}</div>
     <div className="flex  justify-center items-center mt-10 flex-wrap">
       {lotteryItems.map((item, id) => {
         return (
