@@ -45,11 +45,6 @@ const NavBar=()=> {
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
-        <NavbarItem >
-        <Button as={Link} color="primary" href="login" variant="flat">
-            Login
-          </Button>
-        </NavbarItem>
         <NavbarItem>
           <Button as={Link} color="secondary" href="register" variant="flat">
             Sign Up
@@ -58,6 +53,11 @@ const NavBar=()=> {
         <NavbarItem >
         <Button as={Link} color="success" href="game" variant="flat">
             Game
+          </Button>
+        </NavbarItem>
+          <NavbarItem >
+        <Button as={Link} color="danger" href="calculator" variant="flat">
+            Calculator
           </Button>
         </NavbarItem>
       </NavbarContent>

@@ -35,8 +35,8 @@ validationSchema : SignupSchema,
   return (
     
     <form onSubmit={formik.handleSubmit}>
-    <div className="min-h-screen  bg-gray-500 py-12 px-4 sm:px-6 lg:px-8 text box-border bg-gray-500 ">
-    <div className="border border-purple-300 w-96 h-95 bg-indigo-300  ">
+    <div className="min-h-screen   py-12 px-4 sm:px-6 lg:px-8 text box-border bg-purple-400 ">
+    <div className="border border-blue-700 w-96 h-95 bg-indigo-400  ">
     <div className='bg-white'>
      <div className=' text-4xl p-0 font-serif text-black  '>Sign up</div>
      <div className="text-1xl p-0  font-serif">It's quick and easy.</div></div>
